@@ -741,7 +741,7 @@ function buildTopicHTML(topic) {
 function buildSection(type, items, topic) {
   if (!items || !items.length) return '';
   const cfg = TYPE_CONFIG[type] || { label: type, name: type, cls: '' };
-  const sorted = [...items].sort((a,b) => parseYear(a.Year||'') - parseYear(b.Year||''));
+  const sorted = [...items].sort((a,b) => parseYear(b.Year||'') - parseYear(a.Year||''));
   const grouped = {};
   sorted.forEach(q => { const y = q.Year||'Unknown'; (grouped[y]=grouped[y]||[]).push(q); });
   let cardsHTML = '';
